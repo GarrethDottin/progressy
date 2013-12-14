@@ -3,10 +3,12 @@ Progressy::Application.routes.draw do
   root to: "lists#index"
 
   resources :users, only: [:new, :create]
-  resources :lists, :only => [:create,:new,:index,:show] 
+  resources :lists, :only => [:create,:new,:index,:show]
   resources :topics, :only => [:create,:new,:show]
   resources :resources, :only => [:create]
   resources :user_topics, :only => [:update]
+
+  post '/peer_list', to: 'lists#peer_list'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
