@@ -1,0 +1,10 @@
+<H3> Registration </H3>
+
+<%= form_for @user, url: {action: "create"}, html: {class: "new_user_form"} do |f| %>
+  <%= f.text_field :firstname %><br>
+  <%= f.text_field :lastname %><br>
+  <%= f.text_field :username %><br>
+  <%= f.text_field :email %><br>
+  <%= f.password_field :password %><br>
+  <%= f.submit "Create" %><br>
+<% end %>
