@@ -1,5 +1,6 @@
 class ResourcesController < ApplicationController
   def create
-    Resource.create params[:resource]
+    resource = Resource.create params[:resource]
+    redirect_to list_topic_path(resource.topic.list.id, resource.topic.id)
   end
 end

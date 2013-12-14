@@ -2,7 +2,9 @@ Progressy::Application.routes.draw do
 
 
   resources :users, only: [:new, :create]
-  resources :lists, :only => [:create,:new,:index]
+  resources :lists, :only => [:create,:new,:index,:show] do
+    resources :topics, :only => [:show]
+  end
   resources :topics, :only => [:create,:new]
   resources :resources, :only => [:create]
 
