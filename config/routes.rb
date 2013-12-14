@@ -1,6 +1,7 @@
 Progressy::Application.routes.draw do
 
-  resources :list, :only => [:create,:new]
+  resources :lists, :only => [:create,:new,:index]
+  resources :topics, :only => [:create,:new]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
