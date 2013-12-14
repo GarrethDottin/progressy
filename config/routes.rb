@@ -3,9 +3,9 @@ Progressy::Application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :lists, :only => [:create,:new,:index,:show] do
-    resources :topics, :only => [:show]
+    # resources :topics, :only => [:show]
   end
-  resources :topics, :only => [:create,:new]
+  resources :topics, :only => [:create,:new,:show]
   resources :resources, :only => [:create]
 
   # The priority is based upon order of creation:
