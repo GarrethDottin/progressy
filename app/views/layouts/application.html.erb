@@ -5,12 +5,13 @@
   <%= csrf_meta_tag %>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <%= stylesheet_link_tag 'style.css' %>
 </head>
 <body>
 
   <%= render 'layouts/header' %>
 
   <%= yield %>
-  
+
 </body>
 </html>
