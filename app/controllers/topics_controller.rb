@@ -19,6 +19,9 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @resource = Resource.new
+    if request.xhr?
+      render partial: 'topics/topic', locals: {topic: @topic}, layout: false
+    end
   end
 
 end
