@@ -7,6 +7,7 @@ Progressy::Application.routes.draw do
   end
   resources :topics, :only => [:create,:new,:show]
   resources :resources, :only => [:create]
+  resources :user_topics, :only => [:update]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

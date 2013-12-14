@@ -1,5 +1,6 @@
+<h2>Welcome, <%= current_user.firstname %>!</h2>
 <%= form_for @topic do |f| %>
 <p><%= collection_select(:topic, :list_id, List.all, :id, :name) %></p>
-<p><%= f.text_field :name %></p>
+<p><%= f.text_field :name, placeholder: "topic name" %></p>
 <p><%= f.submit %></p>
 <% end %>

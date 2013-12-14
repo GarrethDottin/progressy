@@ -11,7 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20131214073023) do
+
 
   create_table "lists", :force => true do |t|
     t.string   "name"
