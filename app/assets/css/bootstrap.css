@@ -4777,8 +4777,9 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 18px;
+  font-size: 28px;
   line-height: 20px;
+
 }
 
 .navbar-brand:hover,
@@ -4868,7 +4869,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     padding-bottom: 15px;
   }
   .navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
+    /*margin-right: -15px;*/
   }
 }
 
@@ -5089,12 +5090,13 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #7a8288;
+  background-color: #ecf0f1;
   border-color: #62686d;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #cccccc;
+  color: #ffffff;
+  font-family: RobotoCondensed-Bold;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -7516,8 +7518,8 @@ td.visible-print {
 }
 
 .navbar-inverse {
-  background-image: -webkit-linear-gradient(#8a9196, #7a8288 60%, #70787d);
-  background-image: linear-gradient(#8a9196, #7a8288 60%, #70787d);
+  background-image: -webkit-linear-gradient(#ecf0f1, #7a8288 60%, #70787d);
+  background-image: linear-gradient(#7f8c8d, #7f8c8d 60%, #7f8c8d);
   background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff8a9196', endColorstr='#ff70787d', GradientType=0);
   filter: none;
