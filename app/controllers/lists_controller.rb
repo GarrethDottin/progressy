@@ -28,5 +28,9 @@ class ListsController < ApplicationController
     @resource = Resource.new
   end
 
+  def show
+    @list = List.find(params[:id])
+  end
+
 end
 

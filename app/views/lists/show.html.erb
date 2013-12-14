@@ -1,0 +1,4 @@
+<h1> <%= @list.name %> <br> </h1>
+<% @list.topics.each do |topic| %> <br>
+  <%= link_to "#{topic.name}", list_topic_path(topic) %>
+<% end %>
