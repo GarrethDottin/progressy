@@ -1,0 +1,13 @@
+<h1><%= @topic.name %></h1>
+
+<h3>Resources</h3>
+
+<% @topic.resources.each do |resource| %>
+  <%= resource.content %><br>
+<% end %>
+
+<%= form_for @resource do |f| %>
+<p><%= f.text_field :content %></p>
+<p><%= f.hidden_field :topic_id, value: @topic.id %></p>
+<p><%= f.submit %></p>
+<% end %>
