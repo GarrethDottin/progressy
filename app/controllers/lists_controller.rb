@@ -9,6 +9,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @resource = Resource.new
   end
 
 end
