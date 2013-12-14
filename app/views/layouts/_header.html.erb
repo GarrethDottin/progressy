@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default" role="navigation">
+
+  <ul class="nav navbar-nav navbar-right">
+    <li>    
+      <% if signed_in? -%>
+        <%= link_to t('.sign_out'), sign_out_path, :method => :delete %>
+      <% else -%>
+        <%= link_to t('.sign_in'), sign_in_path %>
+      <% end -%>
+    </li>
+  </ul>
+  
+</nav>
