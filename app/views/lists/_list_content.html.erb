@@ -1,0 +1,29 @@
+<%= user.username %>
+
+  <% lists.each do |list| %>
+  <%= list.name %>
+  <ul>
+    <% user_topics_with_list_ids.each do |topic, list_id| %>
+      <% if list_id == list.id %>
+        <li><%= "#{Topic.find(topic.topic_id).name} -- "  %>
+          <% topic.rating.times do |i| %>
+            <%= image_tag("thumbsup.svg", height: '32', width: '32', id: i.to_s + '_' + topic.id.to_s, class: 'thumb up') %>
+          <% end %>
+          <% (3 - topic.rating).times do |i| %>
+            <%= image_tag("thumbsup.svg", height: '32', width: '32', id: (topic.rating + i).to_s + '_' + topic.id.to_s, class: 'thumb') %>
+          <% end %>
+          </li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <%= form_for resource do |f| %>
+  <p><%= f.text_field :content %></p>
+  <p><%= f.submit %></p>
+  <% end %>
+
+  <% end %>
+
+
+
+

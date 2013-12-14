@@ -15,7 +15,8 @@ class ListsController < ApplicationController
 
   def index
     # @ratings = current_user.user_topics.map { |user_topic| user_topic.rating }
-    @user_topics = current_user.user_topics
+    @user = current_user
+    @user_topics = @user.user_topics.order('created_at ASC')
 
     @user_topics_with_list_ids = {}
     @user_topics.each do |user_topic|
@@ -29,6 +30,21 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+  end
+
+  def peer_list
+    @user = User.find(params[:peer_id])
+    @user_topics = @user.user_topics.order('created_at ASC')
+
+    @user_topics_with_list_ids = {}
+    @user_topics.each do |user_topic|
+      list_id = user_topic.topic.list_id
+      p list_id
+      @user_topics_with_list_ids[user_topic] = list_id
+    end
+    @lists = List.all
+    @resource = Resource.new
+    render partial: 'list_content', locals: {user: @user, user_topics_with_list_ids: @user_topics_with_list_ids, lists: @lists, resource: @resource}, layout: false
   end
 
 end
