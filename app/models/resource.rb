@@ -1,5 +1,6 @@
 class Resource < ActiveRecord::Base
-  attr_accessible :content, :list_id
-  belongs_to :list
+  attr_accessible :content, :topic_id
+  validates :content, presence:  true
+  belongs_to :topic
   belongs_to :user
 end
