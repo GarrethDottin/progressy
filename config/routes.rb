@@ -1,9 +1,9 @@
 Progressy::Application.routes.draw do
 
-  root to: "lists#index"
+  root to: "homepages#index"
 
   resources :users, only: [:new, :create]
-  resources :lists, :only => [:create,:new,:index,:show] 
+  resources :lists, :only => [:create,:new,:index,:show]
   resources :topics, :only => [:create,:new,:show]
   resources :resources, :only => [:create]
   resources :user_topics, :only => [:update]
