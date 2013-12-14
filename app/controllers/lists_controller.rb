@@ -22,7 +22,6 @@ class ListsController < ApplicationController
       list_id = user_topic.topic.list_id
       p list_id
       @user_topics_with_list_ids[user_topic] = list_id
-
     end
     @lists = List.all
     @resource = Resource.new
