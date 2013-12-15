@@ -1,6 +1,6 @@
 .thumb {
   /*background-color: red;*/
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .thumb.up {
@@ -41,4 +41,16 @@
   .tab-content, .new_form {
     margin-top: 205px;
   }
+}
+
+.thumbrow {
+  text-align: right;
+}
+
+table {
+  background-color: #ecf0f1;
+}
+
+#user_select_user_id {
+  margin-left: 20px;
 }

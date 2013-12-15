@@ -20,21 +20,22 @@ function drawChart() {
     <div class="col-md-4" id="topics">
       <% lists.each do |list| %>
       <h5> <%= list.name %> </h5>
-      <ul>
+      <table class="table">
         <% user_topics_with_list_ids.each do |topic, list_id| %>
         <% if list_id == list.id %>
-        <li><%= link_to "#{Topic.find(topic.topic_id).name} -- ", topic_path(topic.topic_id), :class => "topic_link" %>
-
+        <tr><td><%= link_to "#{Topic.find(topic.topic_id).name} -- ", topic_path(topic.topic_id), :class => "topic_link" %></td>
+          <td class="thumbrow">
           <% topic.rating.times do |i| %>
           <%= image_tag("thumbsup.svg", height: '32', width: '32', id: i.to_s + '_' + topic.id.to_s, class: 'thumb up') %>
           <% end %>
           <% (3 - topic.rating).times do |i| %>
           <%= image_tag("thumbsup.svg", height: '32', width: '32', id: (topic.rating + i).to_s + '_' + topic.id.to_s, class: 'thumb') %>
           <% end %>
-        </li>
+        </td>
+        </tr>
         <% end %>
         <% end %>
-      </ul>
+      </table>
 
       <% end %>
     </div>
