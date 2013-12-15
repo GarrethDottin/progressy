@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_filter :screen_user
+
   def create
     new_topic = Topic.create params[:topic]
     User.all.each do |user|
@@ -19,6 +21,10 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @resource = Resource.new
+  end
+
+  def screen_user
+    redirect_to '/' unless current_user
   end
 
 end

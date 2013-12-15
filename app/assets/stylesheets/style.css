@@ -7,3 +7,34 @@
   /*background-color: green;*/
   opacity: 1;
 }
+
+.tab-content {
+  background: rgba(0,0,0,0.8);
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20%;
+  border-radius: 20px;
+  padding: 1px 0 15px 0;
+}
+
+#landing_forms .form-control {
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#landing_forms .btn{
+  margin-bottom: 10px;
+  width: 60%;
+}
+
+#landing_forms {
+  max-width: 500px;
+  min-width: 300px;
+}
+
+@media (min-width: 1000px) {
+  .tab-content {
+    margin-top: 205px;
+  }
+}
