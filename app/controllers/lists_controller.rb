@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+
+  before_filter :screen_user
   def create
     List.create params[:list]
     redirect_to lists_path
@@ -47,5 +49,8 @@ class ListsController < ApplicationController
     render partial: 'list_content', locals: {user: @user, user_topics_with_list_ids: @user_topics_with_list_ids, lists: @lists, resource: @resource}, layout: false
   end
 
+  def screen_user
+    redirect_to '/' unless current_user
+  end
 end
 

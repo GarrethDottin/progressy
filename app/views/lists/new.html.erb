@@ -1,5 +1,8 @@
-<h2>Welcome, <%= current_user.firstname %>!</h2>
+
+<div class="new_form">
+<h2>Make a New List:</h2>
 <%= form_for @list do |f| %>
-<p><%= f.text_field :name, placeholder: "list name" %></p>
-<p><%= f.submit %></p>
+<p><%= f.text_field :name, placeholder: "list name", class: "form-control" %></p>
+<p><%= f.submit "Create List", class: "btn btn-success" %></p>
 <% end %>
+</div>

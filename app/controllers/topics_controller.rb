@@ -1,4 +1,6 @@
 class TopicsController < ApplicationController
+  before_filter :screen_user
+
   def create
     new_topic = Topic.create params[:topic]
     User.all.each do |user|
@@ -24,6 +26,10 @@ class TopicsController < ApplicationController
     if request.xhr?
       render partial: 'topics/topic', locals: {topic: @topic}, layout: false
     end
+  end
+
+  def screen_user
+    redirect_to '/' unless current_user && current_user.is_admin
   end
 
 end
