@@ -5,9 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    p params
     User.create(params[:user])
-    redirect_to new_user_path
+    redirect_to lists_path
   end
 
 end
