@@ -18,13 +18,13 @@ function drawChart() {
 
   <div class ="row">
     <div class="col-md-4" id="topics">
-      <%= user.username %><br>
       <% lists.each do |list| %>
-      <%= list.name %>
+      <h5> <%= list.name %> </h5>
       <ul>
         <% user_topics_with_list_ids.each do |topic, list_id| %>
         <% if list_id == list.id %>
         <li><%= link_to "#{Topic.find(topic.topic_id).name} -- ", topic_path(topic.topic_id), :class => "topic_link" %>
+
           <% topic.rating.times do |i| %>
           <%= image_tag("thumbsup.svg", height: '32', width: '32', id: i.to_s + '_' + topic.id.to_s, class: 'thumb up') %>
           <% end %>
@@ -39,7 +39,7 @@ function drawChart() {
       <% end %>
     </div>
   <div class="col-md-8" id="display">
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+    <div id="chart_div" style="width: 700px; height: 450px;"></div>
     <div id="resources" display="none"></div>
   </div>
   </div>
