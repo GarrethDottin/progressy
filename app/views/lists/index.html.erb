@@ -1,9 +1,6 @@
 <p><%= collection_select("user_select", :user_id, User.all, :id, :username, {:selected => current_user.id}) %></p>
 
 
-
-
-
 <div id="list_content">
 <%= render partial: 'list_content', locals: {user: @user, user_topics_with_list_ids: @user_topics_with_list_ids, lists: @lists, resource: @resource} %>
 
