@@ -1,21 +1,18 @@
 <%= form_for :session, :url => session_path do |form| %>
 <div id="container">
   <div class='text-field'>
-    <%= form.label :email %>
-    <%= form.text_field :email, :type => 'email' %>
+    <%= form.text_field :email, :type => 'email', :placeholder => "email", :class => "form-control" %>
   </div>
-
   <div class='password-field'>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+    <%= form.password_field :password, :placeholder => "password", :class => "form-control" %>
   </div>
 
   <div class='submit-field'>
-    <%= form.submit %>
+    <%= form.submit "Login", :class => "btn btn-success" %>
   </div>
 
   <div class='other-links'>
-    <%= link_to t('.sign_up'), sign_up_path %>
+    <a href="#signup_tab" data-toggle="tab">Need an account? Sign up!</a>
     <%= link_to t('.forgot_password'), new_password_path %>
 </div>
 <% end %>
