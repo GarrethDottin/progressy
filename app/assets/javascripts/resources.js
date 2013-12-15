@@ -12,4 +12,21 @@ $( document ).ready(function() {
         console.log("its not] working")
       })
     })
-})
+
+ $("#display").on('submit',function(e){
+    e.preventDefault()
+    console.log($(this))
+    id = $('#resource_topic_id').attr('value')
+    value = $('#resource_content').val()
+    $.ajax({
+       url: '/resources',
+       type: 'post',
+       data: { resource: {content: value,topic_id: id}}
+   }).done(function(data){
+    console.log(data + "This is working")
+   }).fail(function() {
+     console.log("this is not working")
+
+   })
+    })
+  })
