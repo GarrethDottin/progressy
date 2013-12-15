@@ -19,28 +19,14 @@ $( document ).ready(function() {
     id = $('#resource_topic_id').attr('value')
     value = $('#resource_content').val()
     $.ajax({
-       url: '/resource',
+       url: '/resources',
        type: 'post',
-       data { resource: {content: value,id: id}}
+       data: { resource: {content: value,topic_id: id}}
    }).done(function(data){
     console.log(data + "This is working")
    }).fail(function() {
      console.log("this is not working")
 
    })
-
-
-
-
-
-
-
-
-    }
-
-
-
-    )
+    })
   })
-
-})
