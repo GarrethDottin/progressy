@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_filter :screen_user
+
 
   def create
     new_topic = Topic.create params[:topic]
@@ -10,6 +10,7 @@ class TopicsController < ApplicationController
   end
 
   def new
+
     if current_user && current_user.is_admin
       @topic = Topic.new
       render 'new'
@@ -23,13 +24,11 @@ class TopicsController < ApplicationController
     p params
     @topic = Topic.find(params[:id])
     @resource = Resource.new
+    @user = User.find(params[:peer_id].to_i)
     if request.xhr?
-      render partial: 'topics/topic', locals: {topic: @topic}, layout: false
+      render partial: 'topics/topic', locals: {topic: @topic, resource: @resource, user: @user}, layout: false
     end
   end
 
-  def screen_user
-    redirect_to '/' unless current_user && current_user.is_admin
-  end
 
 end
