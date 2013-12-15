@@ -1,5 +1,5 @@
 class TopicsController < ApplicationController
-  before_filter :screen_user
+  # before_filter :screen_user
 
   def create
     new_topic = Topic.create params[:topic]
@@ -24,7 +24,7 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @resource = Resource.new
     if request.xhr?
-      render partial: 'topics/topic', locals: {topic: @topic}, layout: false
+      p render partial: 'topics/topic', locals: {topic: @topic}, layout: false
     end
   end
 
