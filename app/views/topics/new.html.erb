@@ -1,6 +1,9 @@
-<h2>Welcome, <%= current_user.firstname %>!</h2>
+
+<div class="new_form">
+<h2>Make a New Topic:</h2>
 <%= form_for @topic do |f| %>
-<p><%= collection_select(:topic, :list_id, List.all, :id, :name) %></p>
-<p><%= f.text_field :name, placeholder: "topic name" %></p>
-<p><%= f.submit %></p>
+<p><%= collection_select(:topic, :list_id, List.all, :id, :name, {}, {:class => "form-control"}) %></p>
+<p><%= f.text_field :name, placeholder: "topic name", class: "form-control" %></p>
+<p><%= f.submit "Create Topic", class: "btn btn-success" %></p>
 <% end %>
+</div>

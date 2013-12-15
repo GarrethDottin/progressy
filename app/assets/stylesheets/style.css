@@ -8,7 +8,7 @@
   opacity: 1;
 }
 
-.tab-content {
+.tab-content, .new_form {
   background: rgba(0,0,0,0.8);
   width: 50%;
   margin: 0 auto;
@@ -17,24 +17,28 @@
   padding: 1px 0 15px 0;
 }
 
-#landing_forms .form-control {
+#landing_forms .form-control, .new_form .form-control {
   width: 85%;
   margin: 0 auto;
   margin-bottom: 10px;
 }
 
-#landing_forms .btn{
+#landing_forms .btn, .new_form .btn{
   margin-bottom: 10px;
   width: 60%;
 }
 
-#landing_forms {
+#landing_forms, .new_form {
   max-width: 500px;
   min-width: 300px;
 }
 
+.new_form {
+  text-align: center;
+}
+
 @media (min-width: 1000px) {
-  .tab-content {
+  .tab-content, .new_form {
     margin-top: 205px;
   }
 }
