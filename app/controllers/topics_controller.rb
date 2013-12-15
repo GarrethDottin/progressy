@@ -17,6 +17,8 @@ class TopicsController < ApplicationController
   end
 
   def show
+    p "#" * 100
+    p params
     @topic = Topic.find(params[:id])
     @resource = Resource.new
     if request.xhr?

@@ -17,14 +17,14 @@ function drawChart() {
 <div class="container">
 
   <div class ="row">
-    <div class="col-md-4">
+    <div class="col-md-4" id="topics">
       <%= user.username %><br>
       <% lists.each do |list| %>
       <%= list.name %>
-      <ul id="topics">
+      <ul>
         <% user_topics_with_list_ids.each do |topic, list_id| %>
         <% if list_id == list.id %>
-        <li><%= link_to "#{Topic.find(topic.topic_id).name} -- ", topic_path(topic.id), id: topic.id %>
+        <li><%= link_to "#{Topic.find(topic.topic_id).name} -- ", topic_path(topic.topic_id)%>
           <% topic.rating.times do |i| %>
           <%= image_tag("thumbsup.svg", height: '32', width: '32', id: i.to_s + '_' + topic.id.to_s, class: 'thumb up') %>
           <% end %>

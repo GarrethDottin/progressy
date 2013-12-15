@@ -1,11 +1,13 @@
 $( document ).ready(function() {
   $('#topics').on('click',"a", function(e) {
-    console.log($(this).attr("href"))
+    route = $(this).attr("href")
     e.preventDefault()
-    $.get({
-      url: $(this).attr("href")
+    $.ajax({
+      url: route
       }).done(function(data) {
-        console.log("its really working")
+        console.log(data)
+        $('#resources').html(data)
+        $('#chart_div').hide()
       }).fail(function() {
         console.log("its not] working")
       })
