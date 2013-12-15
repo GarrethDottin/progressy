@@ -24,7 +24,7 @@ class TopicsController < ApplicationController
   end
 
   def screen_user
-    redirect_to '/' unless current_user
+    redirect_to '/' unless current_user && current_user.is_admin
   end
 
 end
