@@ -54,3 +54,7 @@ table {
 #user_select_user_id {
   margin-left: 20px;
 }
+
+#landing_forms h2, #landing_forms a {
+  color: #fff;
+}
