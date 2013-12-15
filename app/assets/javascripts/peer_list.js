@@ -7,7 +7,7 @@ $(function(){
       type: 'post',
       data: {peer_id: peerID}
     }).done(function(data){
-      $('#big-column').html(data)
+      $('#list_content').html(data)
     })
   })
 
