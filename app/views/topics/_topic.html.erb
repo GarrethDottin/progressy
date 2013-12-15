@@ -1,13 +1,17 @@
-<h1><%= @topic.name %></h1>
+<h1><%= topic.name %></h1>
 
 <h3>Resources</h3>
 
-<% @topic.resources.each do |resource| %>
-  <%= resource.content %><br>
+<% topic.resources.each do |resource| %>
+  <% if resource.user_id == user.id %>
+    <%= resource.content %><br>
+  <% end %>
 <% end %>
 
-<%= form_for @resource do |f| %>
-<p><%= f.text_field :content %></p>
-<p><%= f.hidden_field :topic_id, value: @topic.id %></p>
-<p><%= f.submit%></p>
+<% if user.id == current_user.id %>
+  <%= form_for :resource do |f| %>
+    <p><%= f.text_field :content %></p>
+    <p><%= f.hidden_field :topic_id, value: @topic.id %></p>
+    <p><%= f.submit%></p>
+  <% end %>
 <% end %>

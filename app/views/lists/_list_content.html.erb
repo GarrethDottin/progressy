@@ -24,7 +24,7 @@ function drawChart() {
       <ul>
         <% user_topics_with_list_ids.each do |topic, list_id| %>
         <% if list_id == list.id %>
-        <li><%= link_to "#{Topic.find(topic.topic_id).name} -- ", topic_path(topic.topic_id)%>
+        <li><%= link_to "#{Topic.find(topic.topic_id).name} -- ", topic_path(topic.topic_id), :class => "topic_link" %>
           <% topic.rating.times do |i| %>
           <%= image_tag("thumbsup.svg", height: '32', width: '32', id: i.to_s + '_' + topic.id.to_s, class: 'thumb up') %>
           <% end %>
